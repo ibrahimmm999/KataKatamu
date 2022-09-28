@@ -1,6 +1,6 @@
-# tts_stt_app
+# KataKatamu
 
-A new Flutter project.
+Aplikasi speech to text dan text to speech untuk membantu komunikasi tuna rungu dan tuna wicara berbasis flutter.
 
 ## Getting Started
 

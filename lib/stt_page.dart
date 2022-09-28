@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:tts_stt_app/theme/theme.dart';
 
 class SttPage extends StatefulWidget {
   @override
@@ -71,6 +72,7 @@ class _SttPageState extends State<SttPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+            backgroundColor: kDarkBlueColor,
             title: const Text('Speech to Text'),
             leading: IconButton(
                 onPressed: () {
@@ -317,7 +319,7 @@ class SpeechControlWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 color: !hasSpeech || isListening
                     ? Color.fromARGB(255, 203, 203, 203)
-                    : Colors.blue,
+                    : kDarkBlueColor,
                 borderRadius: BorderRadius.circular(10)),
           ),
         ),
@@ -334,7 +336,7 @@ class SpeechControlWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 color: !hasSpeech || isListening
                     ? Color.fromARGB(255, 203, 203, 203)
-                    : Colors.blue,
+                    : kDarkBlueColor,
                 borderRadius: BorderRadius.circular(10)),
           ),
         ),
@@ -351,7 +353,7 @@ class SpeechControlWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 color: !hasSpeech || isListening
                     ? Color.fromARGB(255, 203, 203, 203)
-                    : Colors.blue,
+                    : kDarkBlueColor,
                 borderRadius: BorderRadius.circular(10)),
           ),
         )
@@ -415,10 +417,21 @@ class InitSpeechWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        TextButton(
-          onPressed: hasSpeech ? null : initSpeechState,
-          child: Text(hasSpeech ? 'Sudah aktif' : 'Aktifkan Speech to text',
-              style: TextStyle(decoration: TextDecoration.underline)),
+        Container(
+          margin: EdgeInsets.only(top: 20, bottom: 15),
+          height: 55,
+          decoration: BoxDecoration(
+              color: hasSpeech
+                  ? Color.fromARGB(255, 203, 203, 203)
+                  : kDarkBlueColor,
+              borderRadius: BorderRadius.circular(15)),
+          child: TextButton(
+            onPressed: hasSpeech ? null : initSpeechState,
+            child: Text(hasSpeech ? 'Sudah aktif' : 'Aktifkan Speech to text',
+                style: whiteTextStyle.copyWith(
+                    decoration: TextDecoration.underline,
+                    color: hasSpeech ? Colors.grey : Colors.white)),
+          ),
         ),
       ],
     );
@@ -438,7 +451,7 @@ class SpeechStatusWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 20),
-      color: Theme.of(context).backgroundColor,
+      color: Color.fromARGB(219, 255, 98, 0),
       child: Center(
         child: speech.isListening
             ? Text(

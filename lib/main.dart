@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tts_stt_app/home_page.dart';
+import 'package:tts_stt_app/splash_page.dart';
 import 'package:tts_stt_app/stt_page.dart';
+import 'package:tts_stt_app/theme/theme.dart';
 import 'package:tts_stt_app/tts_page.dart';
 
 void main() {
@@ -17,9 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }

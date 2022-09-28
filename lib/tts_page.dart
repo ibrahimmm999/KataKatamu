@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:tts_stt_app/theme/theme.dart';
 
 class TtsPage extends StatefulWidget {
   @override
@@ -200,6 +201,7 @@ class _TtsPageState extends State<TtsPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: kDarkBlueColor,
           title: Text('Text To Speech'),
           leading: IconButton(
               onPressed: () {
@@ -319,6 +321,7 @@ class _TtsPageState extends State<TtsPage> {
 
   Widget _volume() {
     return Slider(
+        activeColor: kDarkBlueColor,
         value: volume,
         onChanged: (newVolume) {
           setState(() => volume = newVolume);

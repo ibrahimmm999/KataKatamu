@@ -110,8 +110,6 @@ class _SttPageState extends State<SttPage> {
     );
   }
 
-  // This is called each time the users wants to start a new speech
-  // recognition session
   void startListening() {
     _logEvent('start listening');
     lastWords = '';
@@ -144,20 +142,17 @@ class _SttPageState extends State<SttPage> {
     });
   }
 
-  /// This callback is invoked each time new recognition results are
-  /// available after `listen` is called.
   void resultListener(SpeechRecognitionResult result) {
     _logEvent(
         'Result listener final: ${result.finalResult}, words: ${result.recognizedWords}');
     setState(() {
-      lastWords = '${result.recognizedWords} - ${result.finalResult}';
+      lastWords = '${result.recognizedWords}';
     });
   }
 
   void soundLevelListener(double level) {
     minSoundLevel = min(minSoundLevel, level);
     maxSoundLevel = max(maxSoundLevel, level);
-    // _logEvent('sound level $level: $minSoundLevel - $maxSoundLevel ');
     setState(() {
       this.level = level;
     });
@@ -200,7 +195,6 @@ class _SttPageState extends State<SttPage> {
   }
 }
 
-/// Displays the most recently recognized words and the sound level.
 class RecognitionResultsWidget extends StatelessWidget {
   const RecognitionResultsWidget({
     Key? key,

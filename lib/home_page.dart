@@ -25,15 +25,6 @@ class _HomePageState extends State<HomePage> {
       : _panelController.open();
   @override
   Widget build(BuildContext context) {
-    Widget wave() {
-      return Container(
-        width: MediaQuery.of(context).size.width,
-        height: 30,
-        decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("assets/wave.png"))),
-      );
-    }
-
     Widget header() {
       return Container(
         margin: EdgeInsets.only(top: 40, right: 20, left: 20, bottom: 100),

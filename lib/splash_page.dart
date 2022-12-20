@@ -41,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
               height: 15,
             ),
             Text(
-              "Aplikasi Pembantu Komunikasi\nTunanetra dan Tunarungu",
+              "Aplikasi Pembantu Komunikasi\nTunawicara dan Tunarungu",
               style: whiteTextStyle.copyWith(fontSize: 16),
               textAlign: TextAlign.center,
             )
